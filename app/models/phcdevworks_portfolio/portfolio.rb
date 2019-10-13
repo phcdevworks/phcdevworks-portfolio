@@ -1,7 +1,7 @@
 module PhcdevworksPortfolio
-  module Project
+  module Portfolio
     def self.table_name_prefix
-      'phcdevworks_portfolio_project_'
+      'phcdevworks_portfolio_portfolio_'
     end
   end
 end

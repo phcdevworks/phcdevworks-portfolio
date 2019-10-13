@@ -1,4 +1,4 @@
 module PhcdevworksPortfolio
-  module Project::PostsHelper
+  module Portfolio::PostsHelper
   end
 end

@@ -1,7 +1,7 @@
 require 'test_helper'
 
 module PhcdevworksPortfolio
-  class Project::PostTest < ActiveSupport::TestCase
+  class Portfolio::PostTest < ActiveSupport::TestCase
     # test "the truth" do
     #   assert true
     # end

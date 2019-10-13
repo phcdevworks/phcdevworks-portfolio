@@ -1,8 +1,8 @@
 <!-- PHCTitleSEO Title Variables -->
-<% phc_title resource_name.to_s.humanize + " Account Information" %>
-<% phc_title_tagline "Edit Your " + resource_name.to_s.humanize + " Account Information" %>
-<% phc_breadcrumb_one link_to "Home", main_app.root_path %>
-<% phc_breadcrumb_two link_to "Accounts Dashboard", phcdevworks_accounts.dashboard_path %>
+<% phc_title "Portfolio Manager" %>
+<% phc_title_tagline "Update Portfolio" %>
+<% phc_breadcrumb_one yield(:phc_title) %>
+<% phc_breadcrumb_two link_to "Portfolio Index", phcdevworks_portfolio.portfolio_posts_path %>
 <% phc_breadcrumb_three yield(:phc_title_tagline) %>
 <!-- PHCTitleSEO Title Variables -->
 

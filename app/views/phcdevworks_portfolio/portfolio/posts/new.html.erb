@@ -1,14 +1,16 @@
 <!-- PHCTitleSEO Title Variables -->
-<% phc_title "Tutorial Post Manager" %>
-<% phc_title_tagline "Update Tutorial Step" %>
-<% phc_breadcrumb_one yield(:phc_title_tagline) %>
-<% phc_breadcrumb_two link_to "Step Index", phcdevworks_tutorials.tutorial_categories_path %>
+<% phc_title "Portfolio Manager" %>
+<% phc_title_tagline "Create a New Portfolio" %>
+<% phc_breadcrumb_one yield(:phc_title) %>
+<% phc_breadcrumb_two link_to "Portfolio Index", phcdevworks_portfolio.portfolio_posts_path %>
+<% phc_breadcrumb_three yield(:phc_title_tagline) %>
 <!-- PHCTitleSEO Title Variables -->
 
 <!-- Page Bradcrumbs -->
 <ol class="breadcrumb pull-right">
-    <li class="breadcrumb-item"><%= yield(:phc_breadcrumb_one) %></li>
-    <li class="breadcrumb-item active"><%= yield(:phc_breadcrumb_two) %></li>
+	<li class="breadcrumb-item"><%= yield(:phc_breadcrumb_one) %></li>
+	<li class="breadcrumb-item"><%= yield(:phc_breadcrumb_two) %></li>
+	<li class="breadcrumb-item active"><%= yield(:phc_breadcrumb_three) %></li>
 </ol>
 <!-- Page Bradcrumbs -->
 
