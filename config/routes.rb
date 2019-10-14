@@ -1,7 +1,7 @@
 PhcdevworksPortfolio::Engine.routes.draw do
 
-  # Portfolio Routes
-  namespace :portfolio do
+  # Project Routes
+  namespace :project do
     resources :posts
   end
 

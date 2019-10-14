@@ -1,0 +1,47 @@
+<!-- PHCTitleSEO Title Variables -->
+<% phc_title "Portfolio Manager" %>
+<% phc_title_tagline "Update Project Post" %>
+<% phc_breadcrumb_one link_to "Project List", phcdevworks_portfolio.project_posts_path %>
+<% phc_breadcrumb_two yield(:phc_title_tagline) %>
+<!-- PHCTitleSEO Title Variables -->
+
+<!-- Page Bradcrumbs -->
+<ol class="breadcrumb pull-right">
+	<li class="breadcrumb-item"><%= yield(:phc_breadcrumb_one) %></li>
+	<li class="breadcrumb-item active"><%= yield(:phc_breadcrumb_two) %></li>
+</ol>
+<!-- Page Bradcrumbs -->
+
+<!-- Page Header -->
+<h2 class="page-header"><%= yield(:phc_title) %></h2>
+<!-- Page Header -->
+
+<!-- Page Content -->
+<div class="row">
+	<div class="col-lg-12">
+
+		<!-- Panel -->
+		<div class="panel panel-inverse">
+
+			<!-- Panel - Heading -->
+			<div class="panel-heading">
+				<h4 class="panel-title"><%= yield(:phc_title) %></h4>
+			</div>
+			<!-- Panel - Heading -->
+
+			<!-- Panel - Body -->
+			<div class="panel-body">
+
+			    <!-- Edit Form -->
+                <%= render "form", project_post: @project_post %>
+				<!-- Edit Form -->
+
+			</div>
+			<!-- Panel - Body -->
+
+		</div>
+		<!-- Panel -->
+
+	</div>
+</div>
+<!-- Page Content -->
