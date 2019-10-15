@@ -1,6 +1,6 @@
 class Website::PageController < ApplicationController
-    
-    #Index
+
+    # INDEX
     def index
     end
 

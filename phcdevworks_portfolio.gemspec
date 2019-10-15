@@ -3,7 +3,7 @@ require "phcdevworks_portfolio/version"
 
 Gem::Specification.new do |spec|
 
-    spec.name        = "phcdevworks_members"
+    spec.name        = "phcdevworks_portfolio"
     spec.version     = PhcdevworksPortfolio::VERSION
     spec.authors     = ["PHCDevworks"]
     spec.email       = ["info@phcdevworks.com"]
@@ -48,7 +48,7 @@ Gem::Specification.new do |spec|
     spec.add_dependency "mini_magick", "~> 4.9"
 
     # Security Dependencies
-    spec.add_dependency "phcdevworks_accounts", "~> 1.2.0"
+    spec.add_dependency "phcdevworks_accounts", "~> 1.3.0"
 
     # Development Dependencies
     spec.add_development_dependency "sqlite3", "~> 1.4"
