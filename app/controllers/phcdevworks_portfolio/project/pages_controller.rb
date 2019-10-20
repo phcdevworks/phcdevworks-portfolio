@@ -1,7 +1,7 @@
 require_dependency "phcdevworks_portfolio/application_controller"
 
 module PhcdevworksPortfolio
-  class Website::PagesController < ApplicationController
+  class Project::PagesController < ApplicationController
 
     # Layout
     layout 'phcdevworks_portfolio/frontend'

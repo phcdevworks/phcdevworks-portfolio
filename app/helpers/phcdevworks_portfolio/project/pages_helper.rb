@@ -1,4 +1,4 @@
 module PhcdevworksPortfolio
-  module Website::PagesHelper
+  module Project::PagesHelper
   end
 end
