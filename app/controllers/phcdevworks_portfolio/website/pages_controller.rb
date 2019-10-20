@@ -4,7 +4,7 @@ module PhcdevworksPortfolio
   class Website::PagesController < ApplicationController
 
     # Layout
-    layout 'phcdevworks_tutorials/frontend'
+    layout 'phcdevworks_portfolio/frontend'
 
     # INDEX
     def index
