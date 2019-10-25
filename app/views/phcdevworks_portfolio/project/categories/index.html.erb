@@ -1,7 +1,7 @@
 <!-- PHCTitleSEO Title Variables -->
 <% phc_title "Portfolio Manager" %>
-<% phc_title_tagline "Project Post Index" %>
-<% phc_breadcrumb_one link_to "Project List", phcdevworks_portfolio.project_posts_path %>
+<% phc_title_tagline "Project Category Index" %>
+<% phc_breadcrumb_one link_to "Category List", phcdevworks_portfolio.project_categories_path %>
 <% phc_breadcrumb_two yield(:phc_title_tagline) %>
 <!-- PHCTitleSEO Title Variables -->
 
@@ -38,28 +38,19 @@
 
                         <thead>
                             <tr>
-                                <th>Project Title</th>
-                                <th>Project Description</th>
-                                <th>Project URL</th>
-                                <th>Project Type</th>
-                                <th>Project Status</th>
+                                <th>Category Name</th>
                                 <th></th>
                             </tr>
                         </thead>
 
                         <tbody>
-                            <% @project_posts.each do |project_post| %>
+                            <% @project_categories.each do |project_category| %>
                                 <tr>
-                                    <td><%= project_post.project_post_title %></td>
-                                    <td><%= project_post.project_post_description %></td>
-                                    <td><%= project_post.project_post_url %></td>
-                                    <td><%= project_post.project_post_type %></td>
-                                    <td><%= project_post.project_post_status %></td>
+                                    <td><%= project_category.project_category_name %></td>
                                     <td>
                                         <div class="btn-group d-flex" role="group">
-                                            <%= link_to "Project Details", project_post, class: "btn btn-primary btn-xs" %>
-                                            <%= link_to "Update Project", edit_project_post_path(project_post), class: "btn btn-purple btn-xs" %>
-                                            <%= link_to "Remove Project", project_post, method: :delete, data: { confirm: "Are you sure? This will also remove the Members addresses and listings. This action cannot be reversed." }, class: "btn btn-danger btn-xs" %>
+                                            <%= link_to "Update Category", edit_project_category_path(project_category), class: "btn btn-purple btn-xs" %>
+                                            <%= link_to "Remove Category", project_category, method: :delete, data: { confirm: "Are you sure? This will also remove the Members addresses and listings. This action cannot be reversed." }, class: "btn btn-danger btn-xs" %>
                                         </div>
                                     </td>
                                 </tr>
@@ -71,9 +62,9 @@
 				<!-- Index - Table -->
 
 				<!-- New Button -->
-				<%= link_to phcdevworks_portfolio.new_project_post_path, class: "btn btn-primary btn-sm" do %>
+				<%= link_to phcdevworks_portfolio.new_project_category_path, class: "btn btn-primary btn-sm" do %>
 					<i class="fad fa-plus-circle"></i>
-					Add a New Project
+					Add a New Category
 				<% end %>
 				<!-- New Button -->
 

@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-# This migration comes from phcdevworks_accounts (originally 20190701112047)
+# This migration comes from phcdevworks_accounts (originally 20191012042035)
 
 class DeviseCreatePhcdevworksAccountsUsers < ActiveRecord::Migration[6.0]
   def change

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_14_113966) do
+ActiveRecord::Schema.define(version: 2019_10_24_233508) do
 
   create_table "action_mailbox_inbound_emails", force: :cascade do |t|
     t.integer "status", default: 0, null: false
@@ -74,6 +74,25 @@ ActiveRecord::Schema.define(version: 2019_10_14_113966) do
     t.index ["username"], name: "index_phcdevworks_accounts_users_on_username", unique: true
   end
 
+  create_table "phcdevworks_portfolio_categories_posts", force: :cascade do |t|
+    t.integer "category_id"
+    t.integer "post_id"
+  end
+
+  create_table "phcdevworks_portfolio_posts_types", force: :cascade do |t|
+    t.integer "post_id"
+    t.integer "type_id"
+  end
+
+  create_table "phcdevworks_portfolio_project_categories", force: :cascade do |t|
+    t.string "project_category_name"
+    t.string "slug"
+    t.string "user_id"
+    t.string "org_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "phcdevworks_portfolio_project_posts", force: :cascade do |t|
     t.string "project_post_title"
     t.text "project_post_description"
@@ -82,6 +101,15 @@ ActiveRecord::Schema.define(version: 2019_10_14_113966) do
     t.string "project_post_status"
     t.string "project_post_image"
     t.string "project_post_images"
+    t.string "slug"
+    t.string "user_id"
+    t.string "org_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "phcdevworks_portfolio_project_types", force: :cascade do |t|
+    t.string "project_type_name"
     t.string "slug"
     t.string "user_id"
     t.string "org_id"

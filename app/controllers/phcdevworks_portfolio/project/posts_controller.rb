@@ -7,15 +7,11 @@ module PhcdevworksPortfolio
     #include PhcdevworksCore::PhcpluginsHelper
     before_action :authenticate_user!
     before_action :set_paper_trail_whodunnit
-    before_action :set_project_post, only: [:show, :edit, :update, :destroy]
+    before_action :set_project_post, only: [:edit, :update, :destroy]
 
     # GET /project/posts
     def index
       @project_posts = Project::Post.all
-    end
-
-    # GET /project/posts/1
-    def show
     end
 
     # GET /project/posts/new
@@ -29,7 +25,7 @@ module PhcdevworksPortfolio
 
     # POST /project/posts
     def create
-    @project_post = Project::Post.new(project_post_params)
+      @project_post = Project::Post.new(project_post_params)
       @project_post.user_id = current_user.id
       @project_post.org_id = current_user.org_id
       respond_to do |format|
@@ -74,7 +70,7 @@ module PhcdevworksPortfolio
 
     # Whitelist
     def project_post_params
-      params.require(:project_post).permit(:project_post_title, :project_post_description, :project_post_url, :project_post_type, :project_post_status, :project_post_image, :project_post_images)
+      params.require(:project_post).permit(:project_post_title, :project_post_description, :project_post_url, :project_post_type, :project_post_status, :project_post_image, :project_post_images, :slug, :user_id, :org_id, category_ids: [], type_ids: [])
     end
 
   end

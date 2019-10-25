@@ -27,8 +27,8 @@
     </div>
 
     <div class="form-group field_with_errors">
-        <%= form.label :project_post_status, "Project Status" %>
-        <%= form.text_field :project_post_status, placeholder: "Project Status", class: "form-control" %>
+        <%= form.label :project_post_status, "Tutorial Status" %>
+        <%= form.select( :project_post_status, [["Draft","draft"],["Published","published"],["Review","review"]], {}, {class: "form-control"}) %>
     </div>
 
     <div class="form-group field_with_errors">
@@ -38,6 +38,21 @@
     <% if form.object.project_post_image.attached? %>
         <%= image_tag main_app.url_for(form.object.project_post_image), class: "img-responsive img-thumbnail" %>
     <% end %>
+
+    <div class="form-group field_with_errors">
+        <%= form.collection_check_boxes :category_ids, PhcdevworksPortfolio::Project::Category.all, :id, :project_category_name do |project_category| %>
+            <%= project_category.check_box %>
+            <%= project_category.label %><br>
+        <% end %>
+	</div>
+				
+				
+    <div class="form-group field_with_errors">
+        <%= form.collection_check_boxes :type_ids, PhcdevworksPortfolio::Project::Type.all, :id, :project_type_name do |project_type| %>
+            <%= project_type.check_box %>
+            <%= project_type.label %><br>
+        <% end %>
+	</div>
     <!-- Form Input Fields -->
 
     <!-- Form Submition Button -->

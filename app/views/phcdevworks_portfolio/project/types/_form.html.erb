@@ -1,0 +1,22 @@
+<!-- Form - Project - Types -->
+<%= form_with(model: project_type, local: true) do |form| %>
+
+    <!-- PHCNotifi Render Validation -->
+    <%= render "phcdevworks_notifications/bootstrap/validations", :object => @project_type %>
+    <!-- PHCNotifi Render Validation -->
+
+    <!-- Form Input Fields -->
+    <div class="form-group field_with_errors">
+        <%= form.label :project_type_name, "Project Type Name" %>
+        <%= form.text_field :project_type_name, placeholder: "Project Type", class: "form-control" %>
+    </div>
+    <!-- Form Input Fields -->
+
+    <!-- Form Submition Button -->
+    <div class="actions">
+        <%= form.submit class: "btn btn-primary" %>
+    </div>
+    <!-- For Submition Button -->
+
+<% end %>
+<!-- Form - Project - Posts -->
