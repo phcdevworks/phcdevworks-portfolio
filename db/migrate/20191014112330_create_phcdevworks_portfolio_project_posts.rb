@@ -6,7 +6,6 @@ class CreatePhcdevworksPortfolioProjectPosts < ActiveRecord::Migration[6.0]
       t.text :project_post_description
 
       t.string :project_post_url
-      t.string :project_post_type
       t.string :project_post_status
       t.string :project_post_image
       t.string :project_post_images
