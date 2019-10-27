@@ -42,7 +42,7 @@ module PhcdevworksPortfolio
     # PATCH/PUT /project/categories/1
     def update
       respond_to do |format|
-        if @project_category.update(project_post_params)
+        if @project_category.update(project_category_params)
           format.html { redirect_to project_categories_path, :flash => { :notice => 'Project Category has been Updated.' }}
           format.json { render :show, status: :ok, location: @project_category }
         else

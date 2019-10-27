@@ -42,7 +42,7 @@ module PhcdevworksPortfolio
     # PATCH/PUT /project/types/1
     def update
       respond_to do |format|
-        if @project_type.update(project_post_params)
+        if @project_type.update(project_type_params)
           format.html { redirect_to project_types_path, :flash => { :notice => 'Project Type has been Updated.' }}
           format.json { render :show, status: :ok, location: @project_type }
         else

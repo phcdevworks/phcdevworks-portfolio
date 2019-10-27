@@ -50,10 +50,9 @@
                                 <tr>
                                     <td><%= project_post.post_title %></td>
                                     <td><%= project_post.post_description %></td>
-                                    <td><%= project_post.post_status %></td>
+                                    <td><%= project_post.post_status.capitalize %></td>
                                     <td>
                                         <div class="btn-group d-flex" role="group">
-                                            <%= link_to "Project Details", project_post, class: "btn btn-primary btn-xs" %>
                                             <%= link_to "Update Project", edit_project_post_path(project_post), class: "btn btn-purple btn-xs" %>
                                             <%= link_to "Remove Project", project_post, method: :delete, data: { confirm: "Are you sure? This will also remove the Members addresses and listings. This action cannot be reversed." }, class: "btn btn-danger btn-xs" %>
                                         </div>
