@@ -46,7 +46,7 @@
                         <tbody>
                             <% @project_categories.each do |project_category| %>
                                 <tr>
-                                    <td><%= project_category.project_category_name %></td>
+                                    <td><%= project_category.category_name %></td>
                                     <td>
                                         <div class="btn-group d-flex" role="group">
                                             <%= link_to "Update Category", edit_project_category_path(project_category), class: "btn btn-purple btn-xs" %>

@@ -70,7 +70,7 @@ module PhcdevworksPortfolio
 
     # Whitelist
     def project_category_params
-      params.require(:project_category).permit(:project_category_name, :slug, :user_id, :org_id)
+      params.require(:project_category).permit(:category_name, :slug, :user_id, :org_id)
     end
 
   end

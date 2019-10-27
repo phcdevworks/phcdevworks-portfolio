@@ -46,7 +46,7 @@
                         <tbody>
                             <% @project_types.each do |project_type| %>
                                 <tr>
-                                    <td><%= project_type.project_type_name %></td>
+                                    <td><%= project_type.type_name %></td>
                                     <td>
                                         <div class="btn-group d-flex" role="group">
                                             <%= link_to "Update Type Name", edit_project_type_path(project_type), class: "btn btn-purple btn-xs" %>

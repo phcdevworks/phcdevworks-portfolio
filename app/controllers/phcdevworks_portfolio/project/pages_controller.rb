@@ -8,7 +8,7 @@ module PhcdevworksPortfolio
 
     # INDEX
     def index
-      @phcdevworks_projects_index = Project::Post.where(project_post_status: "published")
+      @phcdevworks_projects_index = Project::Post.where(post_status: "published")
     end
 
     # SHOW

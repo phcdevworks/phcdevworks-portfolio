@@ -48,9 +48,9 @@
                         <tbody>
                             <% @project_posts.each do |project_post| %>
                                 <tr>
-                                    <td><%= project_post.project_post_title %></td>
-                                    <td><%= project_post.project_post_description %></td>
-                                    <td><%= project_post.project_post_status %></td>
+                                    <td><%= project_post.post_title %></td>
+                                    <td><%= project_post.post_description %></td>
+                                    <td><%= project_post.post_status %></td>
                                     <td>
                                         <div class="btn-group d-flex" role="group">
                                             <%= link_to "Project Details", project_post, class: "btn btn-primary btn-xs" %>

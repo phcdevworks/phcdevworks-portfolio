@@ -2,7 +2,7 @@ class CreatePhcdevworksPortfolioProjectCategories < ActiveRecord::Migration[6.0]
   def change
     create_table :phcdevworks_portfolio_project_categories do |t|
 
-      t.string :project_category_name
+      t.string :category_name
 
       t.string :slug
       t.string :user_id
