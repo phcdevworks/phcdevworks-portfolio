@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_03_032865) do
+ActiveRecord::Schema.define(version: 2019_11_03_060459) do
 
   create_table "action_mailbox_inbound_emails", force: :cascade do |t|
     t.integer "status", default: 0, null: false
@@ -100,7 +100,7 @@ ActiveRecord::Schema.define(version: 2019_11_03_032865) do
     t.string "whodunnit"
     t.text "object", limit: 1073741823
     t.datetime "created_at"
-    t.index ["item_type", "item_id"], name: "proj_category_versions"
+    t.index ["item_type", "item_id"], name: "project_category_versions"
   end
 
   create_table "phcdevworks_portfolio_project_post_versions", force: :cascade do |t|
@@ -110,8 +110,8 @@ ActiveRecord::Schema.define(version: 2019_11_03_032865) do
     t.string "whodunnit"
     t.text "object", limit: 1073741823
     t.datetime "created_at"
-    t.index ["item_type", "item_id"], name: "proj_post_versions"
-    t.index ["item_type", "item_id"], name: "proj_type_versions"
+    t.index ["item_type", "item_id"], name: "project_post_versions"
+    t.index ["item_type", "item_id"], name: "project_type_versions"
   end
 
   create_table "phcdevworks_portfolio_project_posts", force: :cascade do |t|

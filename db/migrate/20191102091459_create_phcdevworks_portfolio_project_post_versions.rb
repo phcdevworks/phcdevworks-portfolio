@@ -13,7 +13,7 @@ class CreatePhcdevworksPortfolioProjectPostVersions < ActiveRecord::Migration[6.
 
     end
 
-    add_index :phcdevworks_portfolio_project_post_versions, %i(item_type item_id), :name => 'proj_type_versions'
+    add_index :phcdevworks_portfolio_project_post_versions, %i(item_type item_id), :name => 'project_type_versions'
 
   end
 end

@@ -14,7 +14,7 @@ class CreatePhcdevworksPortfolioProjectCategoryVersions < ActiveRecord::Migratio
 
     end
 
-    add_index :phcdevworks_portfolio_project_category_versions, %i(item_type item_id), :name => 'proj_category_versions'
+    add_index :phcdevworks_portfolio_project_category_versions, %i(item_type item_id), :name => 'project_category_versions'
 
   end
 end
