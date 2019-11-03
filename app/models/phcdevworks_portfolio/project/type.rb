@@ -4,6 +4,9 @@ module PhcdevworksPortfolio
     # Clean URL Initialize
     extend FriendlyId
 
+    # Paper Trail Initialize
+    has_paper_trail :class_name => 'PhcdevworksPortfolio::ProjectTypeVersions'
+
     # Relationships
     has_and_belongs_to_many :posts, class_name: "Project::Post", :join_table => "phcdevworks_portfolio_posts_types", :dependent => :destroy
     belongs_to :user, class_name: "PhcdevworksAccounts::User"

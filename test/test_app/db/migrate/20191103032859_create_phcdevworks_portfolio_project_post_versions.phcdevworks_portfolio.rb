@@ -1,3 +1,4 @@
+# This migration comes from phcdevworks_portfolio (originally 20191102091459)
 class CreatePhcdevworksPortfolioProjectPostVersions < ActiveRecord::Migration[6.0]
   TEXT_BYTES = 1_073_741_823
   def change

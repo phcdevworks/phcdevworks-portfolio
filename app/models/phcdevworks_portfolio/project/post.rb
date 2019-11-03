@@ -4,6 +4,9 @@ module PhcdevworksPortfolio
     # Clean URL Initialize
     extend FriendlyId
 
+    # Paper Trail Initialize
+    has_paper_trail :class_name => 'PhcdevworksPortfolio::ProjectPostVersions'
+
     # Image Upload
     has_one_attached :post_image
 
