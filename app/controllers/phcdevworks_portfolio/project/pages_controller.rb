@@ -4,11 +4,11 @@ module PhcdevworksPortfolio
   class Project::PagesController < ApplicationController
 
     # Layout
-    layout 'phcdevworks_portfolio/frontend'
+    layout "phcdevworks_portfolio/frontend"
 
     # INDEX
     def index
-      @phcdevworks_projects_index = Project::Post.where(post_status: "published")
+      @phcdevworks_projects_index = Project::Post.where(post_status: "published").order("post_title ASC")
     end
 
     # SHOW

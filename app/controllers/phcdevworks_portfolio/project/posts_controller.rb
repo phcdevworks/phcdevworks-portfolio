@@ -11,7 +11,7 @@ module PhcdevworksPortfolio
 
     # GET /project/posts
     def index
-      @project_posts = Project::Post.all
+      @project_posts = Project::Post.all.order("post_title ASC")
     end
 
     # GET /project/posts/new
