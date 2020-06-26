@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    phcdevworks_portfolio (4.6.0)
+    phcdevworks_portfolio (4.6.1)
       aws-sdk-s3 (~> 1.67)
       friendly_id (~> 5.3)
       google-cloud-storage (~> 1.26)

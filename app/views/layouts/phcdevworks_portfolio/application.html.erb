@@ -67,5 +67,83 @@
     <%= javascript_include_tag "phcdevworks_portfolio/application", "data-turbolinks-track": "reload" %>
     <!-- JavaScript -->
 
+    <!-- JavaScript CKEditor -->
+	<script>ClassicEditor
+        .create( document.querySelector( '.editor' ), {
+            config: {
+            	ui: {
+            		width: '500px',
+            		height: '300px'
+            	}
+            }
+        	toolbar: {
+        		items: [
+        		    'heading',
+        			'|',
+        			'fontBackgroundColor',
+        			'fontColor',
+        			'horizontalLine',
+        			'fontSize',
+        			'fontFamily',
+        			'highlight',
+        			'|',
+        			'bold',
+        			'underline',
+        			'italic',
+        			'strikethrough',
+        			'link',
+        			'removeFormat',
+        			'|',
+        			'alignment',
+        			'indent',
+        			'outdent',
+        			'|',
+        			'blockQuote',
+        			'insertTable',
+        			'undo',
+        			'redo',
+        			'|',
+        			'subscript',
+        			'superscript',
+        			'|',
+        			'codeBlock',
+        			'code',
+        			'|',
+        			'MathType',
+        			'ChemType',
+        			'specialCharacters'
+        		]
+        	},
+        	language: 'en',
+        	table: {
+        		contentToolbar: [
+        			'tableColumn',
+        			'tableRow',
+        			'mergeTableCells',
+        			'tableCellProperties',
+        			'tableProperties'
+        		]
+        	},
+        	licenseKey: '',
+        } )
+        .then( editor => {
+        	window.editor = editor;
+        } )
+        .editorConfig = function( config ) {
+            config.title = false;
+			ui: {
+				width: '100%',
+				height: '800px'
+			}
+        };
+        .catch( error => {
+        	console.error( 'Oops, something gone wrong!' );
+        	console.error( 'Please, report the following error in the https://github.com/ckeditor/ckeditor5 with the build id and the error stack trace:' );
+        	console.warn( 'Build id: ulhl6ym1zxhr-qh8kt6relt0l' );
+        	console.error( error );
+        } );
+	</script>
+    <!-- JavaScript CKEditor -->
+
 </body>
 </html>
