@@ -123,13 +123,6 @@
         .then( editor => {
         	window.editor = editor;
         } )
-        .editorConfig = function( config ) {
-            config.title = false;
-			ui: {
-				width: '100%',
-				height: '800px'
-			}
-        };
         .catch( error => {
         	console.error( 'Oops, something gone wrong!' );
         	console.error( 'Please, report the following error in the https://github.com/ckeditor/ckeditor5 with the build id and the error stack trace:' );
