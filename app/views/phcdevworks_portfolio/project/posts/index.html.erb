@@ -49,7 +49,7 @@
                             <% @project_posts.each do |project_post| %>
                                 <tr>
                                     <td><%= project_post.post_title %></td>
-                                    <td><%= project_post.post_description %></td>
+									<td><%= truncate(project_post.post_description, :length => 80, :escape => false) %></td>
                                     <td><%= project_post.post_status.capitalize %></td>
                                     <td>
                                         <div class="btn-group d-flex" role="group">

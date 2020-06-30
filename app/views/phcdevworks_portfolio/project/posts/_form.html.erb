@@ -35,9 +35,9 @@
     <% end %>
 
     <div class="form-group field_with_errors">
-        <%= form.collection_check_boxes :category_ids, PhcdevworksPortfolio::Project::Category.all, :id, :category_name do |project_category| %>
-            <%= project_category.check_box %>
-            <%= project_category.label %><br>
+        <%= form.collection_check_boxes :category_ids, PhcdevworksCoreModules::Modules::Category.all, :id, :category_name do |post_category| %>
+        	<%= post_category.check_box %>
+        	<%= post_category.label %><br>
         <% end %>
 	</div>
 				
