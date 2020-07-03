@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_03_060459) do
+ActiveRecord::Schema.define(version: 2020_07_03_093523) do
 
   create_table "action_mailbox_inbound_emails", force: :cascade do |t|
     t.integer "status", default: 0, null: false
@@ -74,17 +74,17 @@ ActiveRecord::Schema.define(version: 2019_11_03_060459) do
     t.index ["username"], name: "index_phcdevworks_accounts_users_on_username", unique: true
   end
 
-  create_table "phcdevworks_portfolio_categories_posts", force: :cascade do |t|
-    t.integer "category_id"
-    t.integer "post_id"
+  create_table "phcdevworks_core_category_versions", force: :cascade do |t|
+    t.string "item_type", null: false
+    t.integer "item_id", null: false
+    t.string "event", null: false
+    t.string "whodunnit"
+    t.text "object", limit: 1073741823
+    t.datetime "created_at"
+    t.index ["item_type", "item_id"], name: "core_category_versions"
   end
 
-  create_table "phcdevworks_portfolio_posts_types", force: :cascade do |t|
-    t.integer "post_id"
-    t.integer "type_id"
-  end
-
-  create_table "phcdevworks_portfolio_project_categories", force: :cascade do |t|
+  create_table "phcdevworks_core_modules_modules_categories", force: :cascade do |t|
     t.string "category_name"
     t.string "slug"
     t.string "user_id"
@@ -93,14 +93,14 @@ ActiveRecord::Schema.define(version: 2019_11_03_060459) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "phcdevworks_portfolio_project_category_versions", force: :cascade do |t|
-    t.string "item_type", null: false
-    t.integer "item_id", null: false
-    t.string "event", null: false
-    t.string "whodunnit"
-    t.text "object", limit: 1073741823
-    t.datetime "created_at"
-    t.index ["item_type", "item_id"], name: "project_category_versions"
+  create_table "phcdevworks_portfolio_categories_posts", force: :cascade do |t|
+    t.integer "category_id"
+    t.integer "post_id"
+  end
+
+  create_table "phcdevworks_portfolio_posts_types", force: :cascade do |t|
+    t.integer "post_id"
+    t.integer "type_id"
   end
 
   create_table "phcdevworks_portfolio_project_post_versions", force: :cascade do |t|
@@ -119,8 +119,6 @@ ActiveRecord::Schema.define(version: 2019_11_03_060459) do
     t.text "post_description"
     t.string "post_url"
     t.string "post_status"
-    t.string "post_image"
-    t.string "post_images"
     t.string "slug"
     t.string "user_id"
     t.string "org_id"
