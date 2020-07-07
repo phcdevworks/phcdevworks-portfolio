@@ -70,7 +70,7 @@ module PhcdevworksPortfolio
 
     # Whitelist
     def project_post_params
-      params.require(:project_post).permit(:post_title, :post_description, :post_url, :post_type, :post_status, :post_image, :post_images, :slug, :user_id, :org_id, category_ids: [], type_ids: [])
+      params.require(:project_post).permit(:post_title, :post_description, :post_url, :post_type, :post_status, :post_image, :post_images, :slug, :optimization_id, :user_id, :org_id, category_ids: [], type_ids: [])
     end
 
   end
