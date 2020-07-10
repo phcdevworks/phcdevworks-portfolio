@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_07_120123) do
+ActiveRecord::Schema.define(version: 2020_07_10_105628) do
 
   create_table "action_mailbox_inbound_emails", force: :cascade do |t|
     t.integer "status", default: 0, null: false
@@ -74,14 +74,14 @@ ActiveRecord::Schema.define(version: 2020_07_07_120123) do
     t.index ["username"], name: "index_phcdevworks_accounts_users_on_username", unique: true
   end
 
-  create_table "phcdevworks_core_modules_category_versions", force: :cascade do |t|
+  create_table "phcdevworks_core_modules_marketing_optimization_versions", force: :cascade do |t|
     t.string "item_type", null: false
     t.integer "item_id", null: false
     t.string "event", null: false
     t.string "whodunnit"
     t.text "object", limit: 1073741823
     t.datetime "created_at"
-    t.index ["item_type", "item_id"], name: "core_category_versions"
+    t.index ["item_type", "item_id"], name: "marketing_optimize_versions"
   end
 
   create_table "phcdevworks_core_modules_marketing_optimizations", force: :cascade do |t|
@@ -102,16 +102,6 @@ ActiveRecord::Schema.define(version: 2020_07_07_120123) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "phcdevworks_core_modules_optimization_versions", force: :cascade do |t|
-    t.string "item_type", null: false
-    t.integer "item_id", null: false
-    t.string "event", null: false
-    t.string "whodunnit"
-    t.text "object", limit: 1073741823
-    t.datetime "created_at"
-    t.index ["item_type", "item_id"], name: "core_optimize_versions"
-  end
-
   create_table "phcdevworks_core_modules_post_categories", force: :cascade do |t|
     t.string "category_name"
     t.string "slug"
@@ -120,6 +110,16 @@ ActiveRecord::Schema.define(version: 2020_07_07_120123) do
     t.string "optimization_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "phcdevworks_core_modules_post_category_versions", force: :cascade do |t|
+    t.string "item_type", null: false
+    t.integer "item_id", null: false
+    t.string "event", null: false
+    t.string "whodunnit"
+    t.text "object", limit: 1073741823
+    t.datetime "created_at"
+    t.index ["item_type", "item_id"], name: "post_category_versions"
   end
 
   create_table "phcdevworks_portfolio_categories_posts", force: :cascade do |t|
@@ -140,7 +140,6 @@ ActiveRecord::Schema.define(version: 2020_07_07_120123) do
     t.text "object", limit: 1073741823
     t.datetime "created_at"
     t.index ["item_type", "item_id"], name: "project_post_versions"
-    t.index ["item_type", "item_id"], name: "project_type_versions"
   end
 
   create_table "phcdevworks_portfolio_project_posts", force: :cascade do |t|
@@ -163,6 +162,7 @@ ActiveRecord::Schema.define(version: 2020_07_07_120123) do
     t.string "whodunnit"
     t.text "object", limit: 1073741823
     t.datetime "created_at"
+    t.index ["item_type", "item_id"], name: "project_type_versions"
   end
 
   create_table "phcdevworks_portfolio_project_types", force: :cascade do |t|
