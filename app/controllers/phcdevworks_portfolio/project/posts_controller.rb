@@ -11,7 +11,7 @@ module PhcdevworksPortfolio
 
     # GET /project/posts
     def index
-      @project_posts = Project::Post.all.order("post_title ASC")
+      @project_posts = Project::Post.all.order("project_post_title ASC")
     end
 
     # GET /project/posts/new
@@ -70,7 +70,7 @@ module PhcdevworksPortfolio
 
     # Whitelist
     def project_post_params
-      params.require(:project_post).permit(:post_title, :post_description, :post_url, :post_type, :post_status, :post_image, :post_images, :slug, :optimization_id, :user_id, :org_id, category_ids: [], type_ids: [])
+      params.require(:project_post).permit(:project_post_title, :project_post_description, :project_post_url, :project_post_type, :project_post_status, :project_post_image, :project_post_images, :slug, :optimization_id, :user_id, :org_id, category_ids: [], type_ids: [])
     end
 
   end

@@ -8,7 +8,7 @@ module PhcdevworksPortfolio
     has_paper_trail :class_name => 'PhcdevworksPortfolio::ProjectPostVersions'
 
     # Image Upload
-    has_one_attached :post_image
+    has_one_attached :project_post_image
 
     # Relationships
     belongs_to :user, class_name: "PhcdevworksAccounts::User"
@@ -20,7 +20,7 @@ module PhcdevworksPortfolio
     friendly_id :phcdev_project_post_nice_urls, use: [:slugged, :finders]
 
     def phcdev_project_post_nice_urls
-      [:post_title]
+      [:project_post_title]
     end
 
   end

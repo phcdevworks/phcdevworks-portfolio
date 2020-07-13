@@ -7,42 +7,42 @@
 
     <!-- Form Input Fields -->
     <div class="form-group field_with_errors">
-        <%= form.label :post_title, "Project Title" %>
-        <%= form.text_field :post_title, placeholder: "Project Title", class: "form-control" %>
+        <%= form.label :project_post_title, "Project Title" %>
+        <%= form.text_field :project_post_title, placeholder: "Project Title", class: "form-control" %>
     </div>
 
     <div class="form-group field_with_errors">
-        <%= form.label :post_description, "Project Description" %>
-        <%= form.text_area :post_description, placeholder: "Project Description", class: "form-control editor" %>
+        <%= form.label :project_post_description, "Project Description" %>
+        <%= form.text_area :project_post_description, placeholder: "Project Description", class: "form-control editor" %>
     </div>
 
     <div class="form-group field_with_errors">
-        <%= form.label :post_url, "Project URL" %>
-        <%= form.text_field :post_url, placeholder: "Project URL", class: "form-control" %>
+        <%= form.label :project_post_url, "Project URL" %>
+        <%= form.text_field :project_post_url, placeholder: "Project URL", class: "form-control" %>
     </div>
 
     <div class="form-group field_with_errors">
-        <%= form.label :post_status, "Project Status" %>
-        <%= form.select( :post_status, [["Draft","draft"],["Published","published"],["Review","review"]], {}, {class: "form-control"}) %>
+        <%= form.label :project_post_status, "Project Status" %>
+        <%= form.select( :project_post_status, [["Draft","draft"],["Published","published"],["Review","review"]], {}, {class: "form-control"}) %>
     </div>
 
     <div class="form-group field_with_errors">
-        <%= form.label :post_image, "Project Image" %>
-        <%= form.file_field :post_image, class: "form-control" %>
+        <%= form.label :project_post_image, "Project Image" %>
+        <%= form.file_field :project_post_image, class: "form-control" %>
     </div>
-    <% if form.object.post_image.attached? %>
-        <%= image_tag main_app.url_for(form.object.post_image), class: "img-responsive img-thumbnail" %>
+    <% if form.object.project_post_image.attached? %>
+        <%= image_tag main_app.url_for(form.object.project_post_image), class: "img-responsive img-thumbnail" %>
     <% end %>
 
     <div class="form-check">
-        <%= form.collection_check_boxes :type_ids, PhcdevworksPortfolio::Project::Type.all, :id, :type_name do |project_type| %>
+        <%= form.collection_check_boxes :type_ids, PhcdevworksPortfolio::Project::Type.all, :id, :project_type_name do |project_type| %>
             <%= project_type.check_box class: "form-check-input" %>
             <%= project_type.label class: "form-check-label" %>
         <% end %>
 	</div>
 
     <div class="form-check">
-        <%= form.collection_check_boxes :category_ids, PhcdevworksCoreModules::Post::Category.all, :id, :category_name do |post_category| %>
+        <%= form.collection_check_boxes :category_ids, PhcdevworksCoreModules::Post::Category.all, :id, :post_category_name do |post_category| %>
         	<%= post_category.check_box class: "form-check-input" %>
         	<%= post_category.label class: "form-check-label" %>
         <% end %>
@@ -50,7 +50,7 @@
 
 	<div class="form-group">
 		<label>Attach SEO Data</label>
-		<%= collection_select(:project_post, :optimization_id, PhcdevworksCoreModules::Marketing::Optimization.order("seo_title"), :id, :seo_title, {}, {class: "form-control"}) %>
+		<%= collection_select(:project_post, :optimization_id, PhcdevworksCoreModules::Marketing::Optimization.order("marketing_optimization_page_title"), :id, :marketing_optimization_page_title, {}, {class: "form-control"}) %>
 	</div>
     <!-- Form Input Fields -->
 

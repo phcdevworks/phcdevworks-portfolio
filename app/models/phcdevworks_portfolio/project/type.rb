@@ -15,7 +15,7 @@ module PhcdevworksPortfolio
     friendly_id :phcdev_project_type_nice_urls, use: [:slugged, :finders]
 
     def phcdev_project_type_nice_urls
-      [:type_name]
+      [:project_type_name]
     end
 
   end

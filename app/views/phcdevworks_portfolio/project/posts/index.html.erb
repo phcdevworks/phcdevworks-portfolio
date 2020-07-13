@@ -48,9 +48,9 @@
                         <tbody>
                             <% @project_posts.each do |project_post| %>
                                 <tr>
-                                    <td><%= project_post.post_title %></td>
-									<td><%= truncate(project_post.post_description, :length => 80, :escape => false) %></td>
-                                    <td><%= project_post.post_status.capitalize %></td>
+                                    <td><%= project_post.project_post_title %></td>
+									<td><%= truncate(project_post.project_post_description, :length => 80, :escape => false) %></td>
+                                    <td><%= project_post.project_post_status.capitalize %></td>
                                     <td>
                                         <div class="btn-group d-flex" role="group">
                                             <%= link_to "Update Project", edit_project_post_path(project_post), class: "btn btn-purple btn-xs" %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_10_105628) do
+ActiveRecord::Schema.define(version: 2020_07_13_104122) do
 
   create_table "action_mailbox_inbound_emails", force: :cascade do |t|
     t.integer "status", default: 0, null: false
@@ -85,16 +85,16 @@ ActiveRecord::Schema.define(version: 2020_07_10_105628) do
   end
 
   create_table "phcdevworks_core_modules_marketing_optimizations", force: :cascade do |t|
-    t.string "seo_title"
-    t.text "seo_description"
-    t.string "seo_open_graph_post_type"
-    t.string "seo_open_graph_url"
-    t.string "seo_open_graph_title"
-    t.text "seo_open_graph_description"
-    t.string "seo_twitter_post_type"
-    t.string "seo_twitter_url"
-    t.string "seo_twitter_title"
-    t.text "seo_twitter_description"
+    t.string "marketing_optimization_page_title"
+    t.text "marketing_optimization_page_description"
+    t.string "marketing_optimization_og_title"
+    t.text "marketing_optimization_og_description"
+    t.string "marketing_optimization_og_type"
+    t.string "marketing_optimization_og_url"
+    t.string "marketing_optimization_twitter_title"
+    t.text "marketing_optimization_twitter_description"
+    t.string "marketing_optimization_twitter_type"
+    t.string "marketing_optimization_twitter_url"
     t.string "slug"
     t.string "user_id"
     t.string "org_id"
@@ -103,7 +103,7 @@ ActiveRecord::Schema.define(version: 2020_07_10_105628) do
   end
 
   create_table "phcdevworks_core_modules_post_categories", force: :cascade do |t|
-    t.string "category_name"
+    t.string "post_category_name"
     t.string "slug"
     t.string "user_id"
     t.string "org_id"
@@ -143,10 +143,12 @@ ActiveRecord::Schema.define(version: 2020_07_10_105628) do
   end
 
   create_table "phcdevworks_portfolio_project_posts", force: :cascade do |t|
-    t.string "post_title"
-    t.text "post_description"
-    t.string "post_url"
-    t.string "post_status"
+    t.string "project_post_title"
+    t.text "project_post_description"
+    t.string "project_post_url"
+    t.string "project_post_status"
+    t.string "project_post_image"
+    t.string "project_post_images"
     t.string "slug"
     t.string "user_id"
     t.string "org_id"
@@ -166,7 +168,7 @@ ActiveRecord::Schema.define(version: 2020_07_10_105628) do
   end
 
   create_table "phcdevworks_portfolio_project_types", force: :cascade do |t|
-    t.string "type_name"
+    t.string "project_type_name"
     t.string "slug"
     t.string "user_id"
     t.string "org_id"
