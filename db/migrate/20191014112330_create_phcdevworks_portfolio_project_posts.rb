@@ -7,8 +7,8 @@ class CreatePhcdevworksPortfolioProjectPosts < ActiveRecord::Migration[6.0]
 
       t.string :project_post_url
       t.string :project_post_status
-      t.string :project_post_image
-      t.string :project_post_images
+
+      t.string :optimization_id
 
       t.string :slug
       t.string :user_id

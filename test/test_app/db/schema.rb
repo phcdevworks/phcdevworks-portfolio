@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_13_104122) do
+ActiveRecord::Schema.define(version: 2020_07_18_013663) do
 
   create_table "action_mailbox_inbound_emails", force: :cascade do |t|
     t.integer "status", default: 0, null: false
@@ -122,14 +122,14 @@ ActiveRecord::Schema.define(version: 2020_07_13_104122) do
     t.index ["item_type", "item_id"], name: "post_category_versions"
   end
 
-  create_table "phcdevworks_portfolio_categories_posts", force: :cascade do |t|
-    t.integer "category_id"
-    t.integer "post_id"
-  end
-
   create_table "phcdevworks_portfolio_posts_types", force: :cascade do |t|
     t.integer "post_id"
     t.integer "type_id"
+  end
+
+  create_table "phcdevworks_portfolio_project_categories_posts", force: :cascade do |t|
+    t.integer "category_id"
+    t.integer "post_id"
   end
 
   create_table "phcdevworks_portfolio_project_post_versions", force: :cascade do |t|
