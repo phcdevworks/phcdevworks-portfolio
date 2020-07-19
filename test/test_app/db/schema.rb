@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_18_013663) do
+ActiveRecord::Schema.define(version: 2020_07_19_075851) do
 
   create_table "action_mailbox_inbound_emails", force: :cascade do |t|
     t.integer "status", default: 0, null: false
@@ -58,6 +58,18 @@ ActiveRecord::Schema.define(version: 2020_07_18_013663) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
+    t.integer "failed_attempts", default: 0, null: false
+    t.string "unlock_token"
+    t.datetime "locked_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "firstname"
@@ -81,7 +93,7 @@ ActiveRecord::Schema.define(version: 2020_07_18_013663) do
     t.string "whodunnit"
     t.text "object", limit: 1073741823
     t.datetime "created_at"
-    t.index ["item_type", "item_id"], name: "marketing_optimize_versions"
+    t.index ["item_type", "item_id"], name: "marketing_optimization_versions"
   end
 
   create_table "phcdevworks_core_modules_marketing_optimizations", force: :cascade do |t|
@@ -122,11 +134,6 @@ ActiveRecord::Schema.define(version: 2020_07_18_013663) do
     t.index ["item_type", "item_id"], name: "post_category_versions"
   end
 
-  create_table "phcdevworks_portfolio_posts_types", force: :cascade do |t|
-    t.integer "post_id"
-    t.integer "type_id"
-  end
-
   create_table "phcdevworks_portfolio_project_categories_posts", force: :cascade do |t|
     t.integer "category_id"
     t.integer "post_id"
@@ -147,14 +154,17 @@ ActiveRecord::Schema.define(version: 2020_07_18_013663) do
     t.text "project_post_description"
     t.string "project_post_url"
     t.string "project_post_status"
-    t.string "project_post_image"
-    t.string "project_post_images"
+    t.string "optimization_id"
     t.string "slug"
     t.string "user_id"
     t.string "org_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "optimization_id"
+  end
+
+  create_table "phcdevworks_portfolio_project_posts_types", force: :cascade do |t|
+    t.integer "post_id"
+    t.integer "type_id"
   end
 
   create_table "phcdevworks_portfolio_project_type_versions", force: :cascade do |t|
@@ -169,6 +179,7 @@ ActiveRecord::Schema.define(version: 2020_07_18_013663) do
 
   create_table "phcdevworks_portfolio_project_types", force: :cascade do |t|
     t.string "project_type_name"
+    t.string "optimization_id"
     t.string "slug"
     t.string "user_id"
     t.string "org_id"

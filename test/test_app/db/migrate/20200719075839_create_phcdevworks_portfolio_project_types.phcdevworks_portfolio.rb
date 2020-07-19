@@ -5,6 +5,8 @@ class CreatePhcdevworksPortfolioProjectTypes < ActiveRecord::Migration[6.0]
 
       t.string :project_type_name
 
+      t.string :optimization_id
+
       t.string :slug
       t.string :user_id
       t.string :org_id

@@ -8,13 +8,13 @@ module PhcdevworksPortfolio
     has_paper_trail :class_name => 'PhcdevworksPortfolio::ProjectTypeVersions'
 
     # Relationships
-    has_and_belongs_to_many :posts, class_name: "Project::Post", :join_table => "phcdevworks_portfolio_posts_types", :dependent => :destroy
+    has_and_belongs_to_many :posts, class_name: "Project::Post", :join_table => "phcdevworks_portfolio_project_posts_types", :dependent => :destroy
     belongs_to :user, class_name: "PhcdevworksAccounts::User"
 
     # Clean URL Define
-    friendly_id :phcdev_project_type_nice_urls, use: [:slugged, :finders]
+    friendly_id :project_type_nice_urls, use: [:slugged, :finders]
 
-    def phcdev_project_type_nice_urls
+    def project_type_nice_urls
       [:project_type_name]
     end
 
