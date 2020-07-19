@@ -1,7 +1,6 @@
 class CreatePhcdevworksPortfolioProjectPostVersions < ActiveRecord::Migration[6.0]
   TEXT_BYTES = 1_073_741_823
   def change
-
     create_table :phcdevworks_portfolio_project_post_versions do |t|
 
       t.string   :item_type, {:null=>false}
