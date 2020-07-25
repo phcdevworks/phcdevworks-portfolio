@@ -8,7 +8,7 @@ module PhcdevworksPortfolio
 
     # INDEX
     def index
-      @phcdevworks_projects_index = Project::Post.where(post_status: "published").order("post_title ASC")
+      @phcdevworks_projects_index = Project::Post.where(project_post_status: "published").order("project_post_title ASC")
       @phcdevworks_projects_randomizer = Project::Post.order('RANDOM()').limit(1)
     end
 
