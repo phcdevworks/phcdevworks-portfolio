@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email       = ["imfo@phcdevworks.com"]
   spec.homepage    = "https://phcdevworks.com/"
   spec.summary     = "Rails 6 - Engine - Potfolio"
-  spec.description = "Ruby on Rails 6 Engine to Manage and Organize a Websites Work Portfolio."
+  spec.description = "Show your work to the world with PHCDevworks Portfolio. Our open-source Ruby on Rails 6 engine allows you to easily manage a portfolio of projects and creative projects. List items individually with URLs to the individual projects and descriptions."
   spec.license     = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the "allowed_push_host"
