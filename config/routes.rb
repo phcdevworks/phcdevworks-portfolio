@@ -6,9 +6,10 @@ PhcdevworksPortfolio::Engine.routes.draw do
     resources :types, class_name: "Project::Type"
     resources :pages, only: [:index, :show]
   end
-
+  
   # Mount Routes
   mount PhcdevworksAccounts::Engine, :at => '/'
+  mount PhcdevworksAccountsStripe::Engine, :at => '/'
   mount PhcdevworksCoreModules::Engine, :at => '/'
 
 end
