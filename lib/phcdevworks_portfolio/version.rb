@@ -1,3 +1,3 @@
 module PhcdevworksPortfolio
-  VERSION = '10.0.5'
+  VERSION = "10.1.1"
 end
